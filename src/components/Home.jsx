@@ -21,7 +21,7 @@ const StyledSearchArea = styled.div`
 `
 const tempPeople = []
 export default function Home({currentFavorite}) {
-    const url = 'https://swapi.dev/api/people/'
+    const url = 'http://swapi.dev/api/people/'
     const [people, setPeople] = useState([])
     const [input, setInput] = useState('')
       useEffect(() => {
