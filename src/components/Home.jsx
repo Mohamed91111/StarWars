@@ -72,7 +72,8 @@ function peopleApi(setPeople,url){
      setPeople([...temp2])
      
      if (res.data.next !== null) {
-       let processed_url = "https" + res.data.next.slice(6);
+       let processed_url = "https" + res.data.next.slice(4);
+       console.log(processed_url);
        peopleApi(setPeople,processed_url)
        
      }
