@@ -21,7 +21,7 @@ const StyledSearchArea = styled.div`
 `
 const tempPeople = []
 export default function Home({currentFavorite}) {
-    const url = 'http://swapi.dev/api/people/'
+    const url = 'https://swapi.dev/api/people/'
     const [people, setPeople] = useState([])
     const [input, setInput] = useState('')
       useEffect(() => {
@@ -72,7 +72,8 @@ function peopleApi(setPeople,url){
      setPeople([...temp2])
      
      if (res.data.next !== null) {
-       peopleApi(setPeople,res.data.next)
+       processed_url = "https" + res.data.next.slice(6);
+       peopleApi(setPeople,processed_url)
        
      }
     
